@@ -1,0 +1,166 @@
+ /* 全局重置 ———— 完全保留原有风格，仅右侧导航样式微调为灰白按钮（无圆角矩形） */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "LXGW WenKai Screen", sans-serif;
+        }
+
+        /* 导航栏 (保留原始布局结构) */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+        }
+
+        /* 右侧导航链接容器 — 使用普通间距，无圆角矩形背景 */
+        .navbar nav {
+            display: flex;
+            gap: 24px;          /* 链接之间舒适间距，整洁干净 */
+            align-items: center;
+        }
+
+        /* Home / About 链接样式：灰白色按钮即无彩色底、干净、类似普通文字链接但带有轻微灰白感 */
+        .navbar a {
+            color: #A39480;          /* 灰白色调，深灰偏中性，干净利落 */
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 6px 8px;        /* 极简内边距，增加点击区域但不产生圆角矩形背景 */
+            background-color: transparent;  /* 完全透明背景，无圆角矩形 */
+            border-radius: 0;         /* 明确无圆角 */
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+            display: inline-block;
+        }
+
+        /* 悬停效果: 仅改变文字颜色和轻微下划线/位移，不添加任何背景和圆角矩形 */
+        .navbar a:hover {
+            color: #1a202c;           /* 深灰黑色，更有反馈感 */
+            transform: translateY(-1px);
+            text-decoration: underline; /* 符合传统超链接习惯，同时不突兀 */
+        }
+
+        /* 点击活跃效果 */
+        .navbar a:active {
+            transform: translateY(1px);
+            color: #2d3748;
+        }
+
+        /* 内容区域 (完全保留原始样式) */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* 卡片样式 (完全保留原始设计: 深蓝边框 + 圆角20px + 其他) */
+        .card {
+            flex: 1 1 200px; /* 自适应宽度 */
+            min-width: 150px;
+            max-width: 250px;
+            border: 2px solid #003366; /* 深蓝色边框 */
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* 卡片悬停仅增强交互，不破坏原有风格 */
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 51, 102, 0.08);
+        }
+
+        /* 响应式调整 (完全保留原始规则) */
+        @media (max-width: 600px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 80%;
+            }
+            /* 极小屏幕下导航链接间距微调，保证不换行错位 */
+            .navbar nav {
+                gap: 12px;
+            }
+            .navbar a {
+                padding: 4px 6px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* logo区域（图片+谜星叫同行/字体变大）保持之前优化：flex行内 + 大字号 */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 100px;
+            display: block;
+        }
+
+        .logo p {
+            font-size: 1.5rem;      /* 字体变大醒目 */
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.2;
+            color: #A39480;       /* 与卡片边框呼应，经典深蓝 */
+            letter-spacing: 1px;
+        }
+
+        /* ========= 新增 .main-content 样式 ========= */
+        /* 要求：留出更多页边距，改成a标签，字号大一些 */
+        .main-content {
+            margin: 40px 60px;           /* 更多页边距：上下40px，左右60px */
+        }
+
+        .main-content a {
+            font-size: 1.5rem;             /* 字号大一些 */
+            font-weight: 600;
+            color: #A39480;              /* 深蓝色，与卡片边框呼应 */
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: block;
+            line-height: 1.3;
+        }
+
+         .main-content p {
+            font-size: 1rem;             /* 字号大一些 */
+            color: black;              /* 深蓝色，与卡片边框呼应 */
+            text-decoration: none;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .main-content a:hover {
+            color: #001f3f;
+            text-decoration: underline;
+        }
+
+        /* 响应式：窄屏幕下保持更多页边距，但适当缩小 */
+        @media (max-width: 768px) {
+            .main-content {
+                margin: 30px 30px;
+            }
+            .main-content a {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .main-content {
+                margin: 24px 20px;
+            }
+            .main-content a {
+                font-size: 1.4rem;
+            }
+        }
