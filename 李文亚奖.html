@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css" />
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />
+    <title>李文亚奖 | Li Wenya Awards</title>
+    <style>
+        /* 完美还原 file.png 的复古温暖配色 */
+        :root {
+            --nav-bg: #f3ebd1;       /* 顶部导航沙滩色 */
+            --page-bg: #faf6e8;      /* 主页面复古米色 */
+            --card-bg: #ffffff;      /* 纯白文字容器 */
+            --text-color: #000000;   /* 纯黑文字 */
+            --link-color: #0022ff;   /* 复刻 file.png 标志性的高饱和度经典蓝链接 */
+            --border-thick: 2px solid #000000;
+            --border-thin: 1px solid #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "LXGW WenKai Screen", Courier, monospace, 'PingFang SC', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 5rem;
+        }
+
+        /* 顶部导航栏栏目 */
+        .top-nav-bar {
+            background-color: var(--nav-bg);
+            width: 100%;
+            padding: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* 复刻 file.png 中的粗黑框按钮样式 */
+        .nav-btn {
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: var(--border-thick);
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.1s, background-color 0.1s;
+        }
+
+        .nav-btn:hover {
+            background-color: #f0ebd8;
+            transform: translateY(-1px);
+        }
+
+        /* 主体布局极限宽度 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 核心视觉：填字游戏 Logo 区域 */
+        .hero-section {
+            position: relative;
+            margin: 80px auto 50px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 模拟 file.png 脑后飘过的派对彩带/喇叭效果 */
+        .hero-bg-effect {
+            position: absolute;
+            font-size: 160px;
+            opacity: 0.12;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+        }
+
+        .logo-board {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* "THE" 顶部黑色小挂件 */
+        .badge-the {
+            background: #000000;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 6px;
+            letter-spacing: 1px;
+            align-self: flex-start;
+            margin-bottom: -2px; /* 紧贴下方方格 */
+            margin-left: 2px;
+        }
+
+        /* 拼字方格群组 */
+        .tile-container {
+            display: flex;
+        }
+
+        /* 单个字母方格 */
+        .letter-tile {
+            width: 46px;
+            height: 46px;
+            background: #ffffff;
+            border: var(--border-thin);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: bold;
+            margin-right: -1px; /* 消除双边框问题 */
+        }
+
+        /* "AWARDS" 右下角错落挂件 */
+        .badge-awards {
+            background: #000000;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 4px 14px;
+            letter-spacing: 2px;
+            align-self: flex-end;
+            margin-top: -2px; /* 紧贴上方方格 */
+            margin-right: -10px; /* 刻意向右伸出，模仿原版不对称美感 */
+        }
+
+        /* 复刻 file.png 底部巨大的白色圆角文案舱 */
+        .intro-box {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 25px 40px;
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: left; /* 原文案左对齐 */
+            font-size: 19px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========================================================
+           ✨ 以下为完美复刻 file.png 的 ists 区域专属样式
+        ======================================================== */
+        .content-section {
+            max-width: 960px;
+            margin: 80px auto 0 auto;
+            text-align: left;
+        }
+
+        /* 居中、大字号、等宽字体的 ists 标题 */
+        .finalists-main-title {
+            font-size: 48px;
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+
+        /* 顶部的规则解释说明文字 */
+        .finalists-caption {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        /* 干净左对齐的大分类标题，移除边框，全靠留白 */
+        .section-sub-title {
+            font-size: 32px;
+            font-weight: normal;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+
+        /* 无边框、纯单色、高通透度的名单表格结构 */
+        .finalist-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            margin-bottom: 40px;
+        }
+
+        .finalist-table td {
+            padding: 6px 0;
+            vertical-align: top;
+        }
+
+        /* 第一列：序号或字母列 */
+        .finalist-table td.col-idx {
+            width: 45px;
+        }
+
+        /* 第二列：提名项目/论文名称（占主要宽度） */
+        .finalist-table td.col-name {
+            width: 60%;
+            padding-right: 30px;
+        }
+
+        /* 第三列：作者/研究团队列 */
+        .finalist-table td.col-author {
+            width: 35%;
+        }
+
+        /* 蓝色复古超链接样式 */
+        .finalist-table a.nominee-link {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .finalist-table a.nominee-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 状态控制：获胜者加粗 */
+        .finalist-table .winner {
+            font-weight: bold;
+        }
+
+        /* 状态控制：特别提名变斜体 */
+        .finalist-table .special-mention {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <div class="top-nav-bar">
+        <a href="#home" class="nav-btn">Home</a>
+        <a href="#finalists" class="nav-btn">Archive</a>
+    </div>
+
+    <div class="container">
+
+        <!-- 核心视觉：完美还原 Crossword 拼贴风格 -->
+        <div class="hero-section" id="home">
+            <!-- 氛围背景 Emoji -->
+            <div class="hero-bg-effect">🎉</div>
+
+            <div class="logo-board">
+                <!-- 顶部小标 -->
+                <div class="badge-the">THE</div>
+
+                <!-- 拼字核心 (LI WENYA) -->
+                <div class="tile-container">
+                    <div class="letter-tile">L</div>
+                    <div class="letter-tile">I</div>
+                    <div class="letter-tile">W</div>
+                    <div class="letter-tile">E</div>
+                    <div class="letter-tile">N</div>
+                    <div class="letter-tile">Y</div>
+                    <div class="letter-tile">A</div>
+                </div>
+
+                <!-- 底部大标 -->
+                <div class="badge-awards">AWARDS</div>
+            </div>
+        </div>
+
+        <!-- 基础介绍信息舱 -->
+        <div class="intro-box">
+           The Li Wenya Award is established to commemorate Professor Li Wenya's outstanding contributions to the physics of Earth's motion, combustion chemistry, black-body biological theory, and other fields. The Li Wenya Award will recognize individuals who have made exceptional contributions to abstract domains.
+        </div>
+
+        <div class="content-section" id="finalists">
+
+            <!-- 居中大标题 -->
+            <h1 class="finalists-main-title">2026 Final List</h1>
+
+            <!-- 说明性段落 (还原加粗与斜体提示) -->
+            <p class="finalists-caption">
+                Congratulations to the finalists of the First Annual Li Wenya Awards! The winners of each category are presented in <strong>bold</strong>.
+            </p>
+
+            <table class="finalist-table">
+                <tbody>
+                    <!-- 表头行 -->
+                    <tr>
+                        <td class="col-idx">A</td>
+                        <td class="col-name"><strong>Science</strong></td>
+                        <td class="col-author"><strong>Name</strong></td>
+                    </tr>
+                    <!-- 提名 1：普通入围 -->
+                    <tr>
+                        <td class="col-idx">1</td>
+                        <td><a href="#" class="nominee-link"></a></td>
+                        <td class="col-author"></td>
+                    </tr>
+                    <!-- 提名 2：特别提名（斜体） -->
+                    <tr>
+                        <td class="col-idx">2</td>
+                        <td><a href="#" class="nominee-link special-mention"></a></td>
+                        <td class="col-author"></td>
+                    </tr>
+                    <!-- 提名 3：最终获奖者（粗体） -->
+                    <tr>
+                        <td class="col-idx">3</td>
+                        <td><a href="#" class="nominee-link winner"></a></td>
+                        <td class="col-author"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="col-idx">B</td>
+                        <td class="col-name"><strong>Music</strong></td>
+                        <td class="col-author"><strong>Name</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
