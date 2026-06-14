@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css" />
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />
+    <title>The Abstract Awards</title>
+    <style>
+        :root {
+            --nav-bg: #f3ebd1;
+            --page-bg: #faf6e8;
+            --card-bg: #ffffff;
+            --text-color: #000000;
+            --link-color: #0022ff;
+            --border-thick: 2px solid #000000;
+            --border-thin: 1px solid #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "LXGW WenKai Screen", Courier, monospace, 'PingFang SC', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 5rem;
+        }
+
+        .top-nav-bar {
+            background-color: var(--nav-bg);
+            width: 100%;
+            padding: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-btn {
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: var(--border-thick);
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.1s, background-color 0.1s;
+        }
+
+        .nav-btn:hover {
+            background-color: #f0ebd8;
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-section {
+            position: relative;
+            margin: 80px auto 50px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-bg-effect {
+            position: absolute;
+            font-size: 160px;
+            opacity: 0.12;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+        }
+
+        .logo-board {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .badge-the {
+            background: #000000;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 6px;
+            letter-spacing: 1px;
+            align-self: flex-start;
+            margin-bottom: -2px;
+            margin-left: 2px;
+        }
+
+        .tile-container {
+            display: flex;
+        }
+
+        .letter-tile {
+            width: 46px;
+            height: 46px;
+            background: #ffffff;
+            border: var(--border-thin);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: bold;
+            margin-right: -1px;
+        }
+
+        .badge-awards {
+            background: #000000;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 4px 14px;
+            letter-spacing: 2px;
+            align-self: flex-end;
+            margin-top: -2px;
+            margin-right: -10px;
+        }
+
+        .intro-box {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 25px 40px;
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+        }
+
+        .content-section {
+            max-width: 960px;
+            margin: 80px auto 0 auto;
+            text-align: left;
+        }
+
+        .finalists-main-title {
+            font-size: 48px;
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+
+        .finalists-caption {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .section-sub-title {
+            font-size: 32px;
+            font-weight: normal;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+
+        .finalist-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px;
+    margin-bottom: 40px;
+    table-layout: fixed;
+}
+
+.finalist-table td {
+    padding: 6px 10px;
+    vertical-align: top;
+    width: 33.33%;
+}
+
+
+
+        .finalist-table a.nominee-link {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .finalist-table a.nominee-link:hover {
+            text-decoration: underline;
+        }
+
+        .finalist-table .winner {
+            font-weight: bold;
+        }
+
+        .finalist-table .special-mention {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav-bar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="archive.html" class="nav-btn">Archives</a>
+    </div>
+
+    <div class="container">
+
+        <div class="hero-section" id="home">
+            <div class="hero-bg-effect">🎉</div>
+        </div>
+
+        <div class="intro-box">
+          李文亚宇宙重要出场人物
+        </div>
+
+        <div class="content-section" id="finalists">
+
+    <h2 class="section-sub-title">李文亚阵营</h2>
+    <table class="finalist-table">
+        <tbody>
+            <tr>
+                <td><strong>所属机构</strong></td>
+                <td><strong>名字</strong></td>
+            </tr>
+
+            <tr>
+                <td>中国天文研究中心</td>
+                <td><a href="https://www.bilibili.com/video/BV1WXSMBXErK?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">张副科长</a></td>
+            </tr>
+
+            <tr>
+                <td>华北电力大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1UjS5BkE52?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">刘建龙教授</a></td>
+            </tr>
+
+            <tr>
+                <td>明迪斯城高等学校</td>
+                <td><a href="https://www.bilibili.com/video/BV1v5SFB2ETa?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">托霍特普教授</a></td>
+            </tr>
+
+            <tr>
+                <td>纽约大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1WgSKByEKQ?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">薛智阳博士</a></td>
+            </tr>
+
+            <tr>
+                <td>刚果科学院</td>
+                <td><a href="https://www.bilibili.com/video/BV1ZHSKBKE9D?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">哈基米院士</a></td>
+            </tr>
+
+            <tr>
+                <td>卢管高级中学</td>
+                <td><a href="https://www.bilibili.com/video/BV15fSeByEP8?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">卢本伟书记</a></td>
+            </tr>
+
+            <tr>
+                <td>东京都国立大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1kNSiBbEKz?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">东雪莲教授</a></td>
+            </tr>
+
+            <tr>
+                <td>武汉大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1eHSiBmE4Z?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">严志雄教授</a></td>
+            </tr>
+
+            <tr>
+                <td>冰岛国家大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1hMSvBBEA4?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">戴·琦巴教授</a></td>
+            </tr>
+
+            <tr>
+                <td>日本下北泽</td>
+                <td><a href="https://www.bilibili.com/video/BV1MdSqB5EZN?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">田所浩二教授</a></td>
+            </tr>
+
+            <tr>
+                <td>合肥理工大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1DwSyBYECi?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">陈永帅教授</a></td>
+            </tr>
+
+            <tr>
+                <td>Open AI</td>
+                <td><a href="https://www.bilibili.com/video/BV15FS2BCEWc?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">山姆·奥特曼CEO</a></td>
+            </tr>
+
+            <tr>
+                <td>新暮里幻想乡大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1mhSpBPEX6?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">博丽灵梦教授</a></td>
+            </tr>
+
+            <tr>
+                <td>庆鹏女子大学</td>
+                <td><a href="https://www.bilibili.com/video/BV16mSpBpEbT?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">冰川纱夜教授</a></td>
+            </tr>
+
+            <tr>
+                <td>光之国</td>
+                <td><a href="https://www.bilibili.com/video/BV15eqCBzEZM?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">贝利亚教授</a></td>
+            </tr>
+            <tr>
+                <td>武汉大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1t9SWBMEz3?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">姜萍教授</a></td>
+            </tr>
+            <tr>
+                <td>6324物理研究所</td>
+                <td><a href="https://www.bilibili.com/video/BV1VvSkBPEzx?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">龙丽研究员</a></td>
+            </tr>
+
+            <tr>
+                <td>6324物理研究所</td>
+                <td><a href="https://www.bilibili.com/video/BV1VvSkBPEzx?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">李占良研究员</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h2 class="section-sub-title">孙笑川阵营</h2>
+    <table class="finalist-table">
+        <tbody>
+            <tr>
+                <td><strong>所属机构</strong></td>
+                <td><strong>名字</strong></td>
+            </tr>
+
+            <tr>
+                <td>114514研究所</td>
+                <td>孙笑川</td>
+            </tr>
+
+            <tr>
+                <td>114514研究所</td>
+                <td>蜜桃乌龙</td>
+            </tr>
+
+            <tr>
+                <td>GTI大洋洲分部</td>
+                <td><a href="https://www.bilibili.com/video/BV1xbUZBbEin?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">大卫·费莱尔</a></td>
+            </tr>
+
+            <tr>
+                <td>北京科学研究院</td>
+                <td><a href="https://www.bilibili.com/video/BV1bbSFBTEii?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">季冬凯主任</a></td>
+            </tr>
+
+            <tr>
+                <td>江苏科技大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1RDSrBAE9m?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">郭伟院士</a></td>
+            </tr>
+
+            <tr>
+                <td>北京大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1e9SrBwEm1?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">阳和平教授</a></td>
+            </tr>
+
+            <tr>
+                <td>东京大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1AiUvBxE45?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">李田所教授</a></td>
+            </tr>
+
+            <tr>
+                <td>武汉大学</td>
+                <td><a href="https://www.bilibili.com/video/BV1BaSWBpEGC?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">许昊龙教授</a></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+</div>
+    </div>
+</body>
+</html>
