@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />
     <title>The Abstract Awards</title>
     <style>
-        /* 完美还原 file.png 的复古温暖配色 */
         :root {
-            --nav-bg: #f3ebd1;       /* 顶部导航沙滩色 */
-            --page-bg: #faf6e8;      /* 主页面复古米色 */
-            --card-bg: #ffffff;      /* 纯白文字容器 */
-            --text-color: #000000;   /* 纯黑文字 */
-            --link-color: #0022ff;   /* 复刻 file.png 标志性的高饱和度经典蓝链接 */
+            --nav-bg: #f3ebd1;
+            --page-bg: #faf6e8;
+            --card-bg: #ffffff;
+            --text-color: #000000;
+            --link-color: #0022ff;
             --border-thick: 2px solid #000000;
             --border-thin: 1px solid #000000;
         }
@@ -32,7 +31,6 @@
             padding-bottom: 5rem;
         }
 
-        /* 顶部导航栏栏目 */
         .top-nav-bar {
             background-color: var(--nav-bg);
             width: 100%;
@@ -43,7 +41,6 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* 复刻 file.png 中的粗黑框按钮样式 */
         .nav-btn {
             background: var(--card-bg);
             color: var(--text-color);
@@ -60,14 +57,12 @@
             transform: translateY(-1px);
         }
 
-        /* 主体布局极限宽度 */
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* 核心视觉：填字游戏 Logo 区域 */
         .hero-section {
             position: relative;
             margin: 80px auto 50px auto;
@@ -75,7 +70,6 @@
             justify-content: center;
         }
 
-        /* 模拟 file.png 脑后飘过的派对彩带/喇叭效果 */
         .hero-bg-effect {
             position: absolute;
             font-size: 160px;
@@ -96,7 +90,6 @@
             align-items: center;
         }
 
-        /* "THE" 顶部黑色小挂件 */
         .badge-the {
             background: #000000;
             color: #ffffff;
@@ -105,16 +98,14 @@
             padding: 2px 6px;
             letter-spacing: 1px;
             align-self: flex-start;
-            margin-bottom: -2px; /* 紧贴下方方格 */
+            margin-bottom: -2px;
             margin-left: 2px;
         }
 
-        /* 拼字方格群组 */
         .tile-container {
             display: flex;
         }
 
-        /* 单个字母方格 */
         .letter-tile {
             width: 46px;
             height: 46px;
@@ -125,10 +116,9 @@
             justify-content: center;
             font-size: 26px;
             font-weight: bold;
-            margin-right: -1px; /* 消除双边框问题 */
+            margin-right: -1px;
         }
 
-        /* "AWARDS" 右下角错落挂件 */
         .badge-awards {
             background: #000000;
             color: #ffffff;
@@ -137,32 +127,27 @@
             padding: 4px 14px;
             letter-spacing: 2px;
             align-self: flex-end;
-            margin-top: -2px; /* 紧贴上方方格 */
-            margin-right: -10px; /* 刻意向右伸出，模仿原版不对称美感 */
+            margin-top: -2px;
+            margin-right: -10px;
         }
 
-        /* 复刻 file.png 底部巨大的白色圆角文案舱 */
         .intro-box {
             background-color: var(--card-bg);
             border-radius: 14px;
             padding: 25px 40px;
             max-width: 960px;
             margin: 0 auto;
-            text-align: left; /* 原文案左对齐 */
+            text-align: left;
             font-size: 19px;
             letter-spacing: 0.5px;
         }
 
-        /* ========================================================
-           ✨ 以下为完美复刻 file.png 的 ists 区域专属样式
-        ======================================================== */
         .content-section {
             max-width: 960px;
             margin: 80px auto 0 auto;
             text-align: left;
         }
 
-        /* 居中、大字号、等宽字体的 ists 标题 */
         .finalists-main-title {
             font-size: 48px;
             font-weight: normal;
@@ -171,7 +156,6 @@
             letter-spacing: 1px;
         }
 
-        /* 顶部的规则解释说明文字 */
         .finalists-caption {
             font-size: 15px;
             line-height: 1.7;
@@ -179,7 +163,6 @@
             color: #000000;
         }
 
-        /* 干净左对齐的大分类标题，移除边框，全靠留白 */
         .section-sub-title {
             font-size: 32px;
             font-weight: normal;
@@ -187,7 +170,6 @@
             margin-bottom: 25px;
         }
 
-        /* 无边框、纯单色、高通透度的名单表格结构 */
         .finalist-table {
             width: 100%;
             border-collapse: collapse;
@@ -200,23 +182,19 @@
             vertical-align: top;
         }
 
-        /* 第一列：序号或字母列 */
         .finalist-table td.col-idx {
             width: 45px;
         }
 
-        /* 第二列：提名项目/论文名称（占主要宽度） */
         .finalist-table td.col-name {
             width: 60%;
             padding-right: 30px;
         }
 
-        /* 第三列：作者/研究团队列 */
         .finalist-table td.col-author {
             width: 35%;
         }
 
-        /* 蓝色复古超链接样式 */
         .finalist-table a.nominee-link {
             color: var(--link-color);
             text-decoration: none;
@@ -226,12 +204,10 @@
             text-decoration: underline;
         }
 
-        /* 状态控制：获胜者加粗 */
         .finalist-table .winner {
             font-weight: bold;
         }
 
-        /* 状态控制：特别提名变斜体 */
         .finalist-table .special-mention {
             font-style: italic;
         }
@@ -240,8 +216,8 @@
 <body>
 
     <div class="top-nav-bar">
-        <a href="#home" class="nav-btn">首页</a>
-        <a href="#finalists" class="nav-btn">历届回顾</a>
+        <a href="#home" class="nav-btn">Home</a>
+        <a href="#finalists" class="nav-btn">Archives</a>
     </div>
 
     <div class="container">
@@ -268,128 +244,144 @@
         </div>
 
         <div class="intro-box">
-           这是一个十分抽象的奖
+           This is a very abstract award. The winner has been bolded.
         </div>
 
         <div class="content-section" id="finalists">
 
-            <h1 class="finalists-main-title">2026 最终名单</h1>
-
+            <h1 class="finalists-main-title">2026 Final List</h1>
 
             <table class="finalist-table">
                 <tbody>
                     <tr>
                         <td class="col-idx">A</td>
-                        <td class="col-name"><strong>生理学或医学奖</strong></td>
-                        <td class="col-author"><strong>姓名</strong></td>
+                        <td class="col-name"><strong>Physiology or Medicine Prize</strong></td>
+                        <td class="col-author"><strong>Author</strong></td>
                     </tr>
                     <tr>
                         <td class="col-idx">1</td>
-                        <td><a href="https://www.bilibili.com/video/BV1B69aB9EBY?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">黑体生物理论</a></td>
-                        <td class="col-author">李文亚</td>
+                        <td><a href="https://www.bilibili.com/video/BV1B69aB9EBY?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Blackbody Biology Theory</a></td>
+                        <td class="col-author">Wenya Li </td>
                     </tr>
                     <tr>
                         <td class="col-idx">2</td>
-                        <td><a href="https://www.bilibili.com/video/BV1MJ4m1h76o?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">生物合成论</a></td>
-                        <td class="col-author">王昌文</td>
+                        <td><a href="https://www.bilibili.com/video/BV1MJ4m1h76o?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><strong>Biosynthesis Theory</strong></a></td>
+                        <td class="col-author"><strong>Changwen Wang</strong></td>
                     </tr>
+                    <tr>
+                        <td> </td>
+                    </tr>
+
 
 
                     <tr>
                         <td class="col-idx">B</td>
-                        <td class="col-name"><strong>物理学奖</strong></td>
-                        <td class="col-author"><strong>姓名</strong></td>
+                        <td class="col-name"><strong>Physics Prize</strong></td>
+                        <td class="col-author"><strong>Author</strong></td>
                     </tr>
                     <tr>
                         <td class="col-idx">1</td>
-                        <td><a href="https://www.bilibili.com/video/BV1UwqdYzEDD?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">盘古方程</a></td>
-                        <td class="col-author">杨建磊</td>
+                        <td><a href="https://www.bilibili.com/video/BV1UwqdYzEDD?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Pangu Equation</a></td>
+                        <td class="col-author">Jianlei Yang </td>
                     </tr>
                     <tr>
                         <td class="col-idx">2</td>
-                        <td><a href="https://www.bilibili.com/video/BV1MnVdzWEYC?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">统一场论</a></td>
-                        <td class="col-author">张祥前</td>
+                        <td><a href="https://www.bilibili.com/video/BV1MnVdzWEYC?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Unified Field Theory</a></td>
+                        <td class="col-author">Xiangqian Zhang </td>
                     </tr>
                     <tr>
                         <td class="col-idx">3</td>
-                        <td><a href="https://www.bilibili.com/video/BV1sfmeBoEHK?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">地球的十二种运动</a></td>
-                        <td class="col-author">李文亚</td>
+                        <td><a href="https://www.bilibili.com/video/BV1sfmeBoEHK?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><strong>Twelve Kinds of Earth Motions</strong></a></td>
+                        <td class="col-author"><strong>Wenya Li</strong></td>
                     </tr>
                     <tr>
                         <td class="col-idx">4</td>
-                        <td><a href="https://www.bilibili.com/video/BV1YFrPBPExo?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">三个引力范围</a></td>
-                        <td class="col-author">李文亚</td>
+                        <td><a href="https://www.bilibili.com/video/BV1YFrPBPExo?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Three Gravity Ranges</a></td>
+                        <td class="col-author">Wenya Li </td>
+                    </tr>
+                     <tr>
+                        <td> </td>
                     </tr>
 
 
 
-                   <tr>
+                    <tr>
                         <td class="col-idx">C</td>
-                        <td class="col-name"><strong>化学奖</strong></td>
-                        <td class="col-author"><strong>姓名</strong></td>
+                        <td class="col-name"><strong>Chemistry Prize</strong></td>
+                        <td class="col-author"><strong>Name</strong></td>
                     </tr>
                     <tr>
                         <td class="col-idx">1</td>
-                        <td><a href="#" class="nominee-link">串联酒精灯实验</a></td>
-                        <td class="col-author">拉挖稀</td>
+                        <td><a href="#" class="nominee-link">Series Alcohol Burner Experiment</a></td>
+                        <td class="col-author">Lavaxi</td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td class="col-idx">2</td>
-                        <td><a href="https://www.bilibili.com/video/BV1QXMpz9Etu?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">合成茂叠铪基醚</a></td>
-                        <td class="col-author">群青</td>
+                        <td><a href="https://www.bilibili.com/video/BV1QXMpz9Etu?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><strong>Synthesis of Cp4N6Hf2O</strong></a></td>
+                        <td class="col-author"><strong>Qun Qing|Ultramarine</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="col-idx">3</td>
+                        <td><a href="https://www.bilibili.com/video/BV1JzVGzHEny?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Flame pH Study</a></td>
+                        <td class="col-author">Scaramouche Classroom</td>
                     </tr>
                      <tr>
-                        <td class="col-idx">3</td>
-                        <td><a href="https://www.bilibili.com/video/BV1JzVGzHEny?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">火焰PH研究</a></td>
-                        <td class="col-author">散兵小课堂</td>
+                        <td> </td>
                     </tr>
+
+
 
 
                     <tr>
                         <td class="col-idx">D</td>
-                        <td class="col-name"><strong>文学奖</strong></td>
-                        <td class="col-author"><strong>姓名</strong></td>
+                        <td class="col-name"><strong>Literature Prize</strong></td>
+                        <td class="col-author"><strong>Name</strong></td>
                     </tr>
                     <tr>
                         <td class="col-idx">1</td>
-                        <td><a href="https://www.bilibili.com/video/BV1UiRZBLEVa?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">《止战之殇》</a></td>
-                        <td class="col-author">佚名</td>
+                        <td><a href="https://www.bilibili.com/video/BV1UiRZBLEVa?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><em><strong>Elegy of War</strong></em></a></td>
+                        <td class="col-author"><strong>Anonymous</strong></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td class="col-idx">2</td>
-                        <td><a href="https://www.bilibili.com/video/BV1cx4y147Sy?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">《别样的碰碰车大战》</a></td>
-                        <td class="col-author">佚名</td>
+                        <td><a href="https://www.bilibili.com/video/BV1cx4y147Sy?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><em>Bizarre Bumper Car Battle</em></a></td>
+                        <td class="col-author">Anonymous</td>
                     </tr>
                     <tr>
                         <td class="col-idx">3</td>
-                        <td><a href="https://www.bilibili.com/video/BV1jB9MYtEPr?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">《银河战区》</a></td>
-                        <td class="col-author">佚名</td>
+                        <td><a href="https://www.bilibili.com/video/BV1jB9MYtEPr?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><em>Galaxy Battlefield</em></a></td>
+                        <td class="col-author">Anonymous</td>
                     </tr>
                     <tr>
                         <td class="col-idx">4</td>
-                        <td><a href="https://www.bilibili.com/video/BV1ovoBYQEZt?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">《国服司空震》</a></td>
-                        <td class="col-author">佚名</td>
+                        <td><a href="https://www.bilibili.com/video/BV1ovoBYQEZt?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><em>National Server Si Kongzhen</em></a></td>
+                        <td class="col-author">Anonymous</td>
                     </tr>
+                     <tr>
+                        <td> </td>
+                    </tr>
+
+
 
                     <tr>
                         <td class="col-idx">E</td>
-                        <td class="col-name"><strong>终身成就奖</strong></td>
+                        <td class="col-name"><strong>Lifetime Achievement Award</strong></td>
                     </tr>
                     <tr>
                         <td class="col-idx">1</td>
-                        <td><a href="#" class="nominee-link">兔娘</a></td>
+                        <td><a href="https://baike.baidu.com/item/%E5%85%94%E5%A8%98/65682264" class="nominee-link">Li Xiong</a></td>
                     </tr>
                     <tr>
                         <td class="col-idx">2</td>
-                        <td><a href="#" class="nominee-link">永雏塔菲</a></td>
+                        <td><a href="https://mzh.moegirl.org.cn/%E6%B0%B8%E9%9B%8F%E5%A1%94%E8%8F%B2" class="nominee-link"><strong>Ace Taffy</strong></a></td>
                     </tr>
                     <tr>
                         <td class="col-idx">3</td>
-                        <td><a href="#" class="nominee-link">孙笑川</a></td>
+                        <td><a href="https://baike.baidu.com/item/%E5%AD%99%E7%AC%91%E5%B7%9D/24368552" class="nominee-link">Xiaochuan Sun</a></td>
                     </tr>
                     <tr>
                         <td class="col-idx">4</td>
-                        <td><a href="#" class="nominee-link">范小勤</a></td>
+                        <td><a href="https://baike.baidu.com/item/%E8%8C%83%E5%B0%8F%E5%8B%A4/20198128" class="nominee-link">Xiaoqin Fan</a></td>
                     </tr>
 
                 </tbody>
