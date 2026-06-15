@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css" />
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />
+    <title>中国抽象百科</title>
+
+    <style>
+        :root {
+            --nav-bg: #f3ebd1;
+            --page-bg: #faf6e8;
+            --card-bg: #ffffff;
+            --text-color: #000000;
+            --link-color: #0022ff;
+            --border-thick: 2px solid #000000;
+            --border-thin: 1px solid #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "LXGW WenKai Screen", Courier, monospace, 'PingFang SC', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 5rem;
+        }
+
+        .top-nav-bar {
+            background-color: var(--nav-bg);
+            width: 100%;
+            padding: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-btn {
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: var(--border-thick);
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background-color: #f0ebd8;
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== 屋顶 ===== */
+        .roof {
+            width: 0;
+            height: 0;
+            margin: 30px auto 0 auto;
+            border-left: 180px solid transparent;
+            border-right: 180px solid transparent;
+            border-bottom: 120px solid #000;
+        }
+
+        .hero-section {
+            position: relative;
+            margin: 40px auto 50px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-bg-effect {
+            position: absolute;
+            font-size: 160px;
+            opacity: 0.12;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .intro-box {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 25px 40px;
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 19px;
+        }
+
+        /* ===== 图片墙 ===== */
+        .image-gallery {
+            max-width: 960px;
+            margin: 30px auto;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .image-gallery img {
+
+            height: 250px;
+            object-fit: cover;
+            border: 2px solid #000;
+            background: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="top-nav-bar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="archive.html" class="nav-btn">Archives</a>
+    </div>
+
+    <div class="container">
+
+
+
+        <div class="hero-section" id="home">
+            <div class="hero-bg-effect">🎉</div>
+        </div>
+
+        <!-- 主标题 -->
+        <div class="intro-box">
+            勇哥大厦（点击图片查看视频）
+        </div>
+
+        <div class="image-gallery">
+            <a href="https://www.bilibili.com/video/BV1hnzFBjEpe?vd_source=81f8148d4d78c5297e373872a7f4c4f3" target="_blank">
+    <img src="pic/家是本.png" alt="家是本">
+</a>
+
+        </div>
+
+        <div class="content-section"></div>
+
+    </div>
+
+</body>
+</html>
