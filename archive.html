@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css" />
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />
     <title>中国抽象百科</title>
+
     <style>
         :root {
             --nav-bg: #f3ebd1;
@@ -49,7 +50,6 @@
             font-size: 14px;
             font-weight: bold;
             text-decoration: none;
-            transition: transform 0.1s, background-color 0.1s;
         }
 
         .nav-btn:hover {
@@ -63,9 +63,19 @@
             padding: 0 20px;
         }
 
+        /* ===== 屋顶 ===== */
+        .roof {
+            width: 0;
+            height: 0;
+            margin: 30px auto 0 auto;
+            border-left: 180px solid transparent;
+            border-right: 180px solid transparent;
+            border-bottom: 120px solid #000;
+        }
+
         .hero-section {
             position: relative;
-            margin: 80px auto 50px auto;
+            margin: 40px auto 50px auto;
             display: flex;
             justify-content: center;
         }
@@ -79,56 +89,6 @@
             transform: translate(-50%, -50%) rotate(-15deg);
             pointer-events: none;
             user-select: none;
-            z-index: 1;
-        }
-
-        .logo-board {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .badge-the {
-            background: #000000;
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: bold;
-            padding: 2px 6px;
-            letter-spacing: 1px;
-            align-self: flex-start;
-            margin-bottom: -2px;
-            margin-left: 2px;
-        }
-
-        .tile-container {
-            display: flex;
-        }
-
-        .letter-tile {
-            width: 46px;
-            height: 46px;
-            background: #ffffff;
-            border: var(--border-thin);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            font-weight: bold;
-            margin-right: -1px;
-        }
-
-        .badge-awards {
-            background: #000000;
-            color: #ffffff;
-            font-size: 13px;
-            font-weight: bold;
-            padding: 4px 14px;
-            letter-spacing: 2px;
-            align-self: flex-end;
-            margin-top: -2px;
-            margin-right: -10px;
         }
 
         .intro-box {
@@ -139,71 +99,61 @@
             margin: 0 auto;
             text-align: left;
             font-size: 19px;
-            letter-spacing: 0.5px;
         }
 
-        .content-section {
+        /* ===== 图片墙 ===== */
+        .image-gallery {
             max-width: 960px;
-            margin: 80px auto 0 auto;
-            text-align: left;
+            margin: 30px auto;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .finalists-main-title {
-            font-size: 48px;
-            font-weight: normal;
-            text-align: center;
-            margin-bottom: 35px;
-            letter-spacing: 1px;
-        }
+        .image-gallery img {
 
-        .finalists-caption {
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            color: #000000;
+            height: 250px;
+            object-fit: cover;
+            border: 2px solid #000;
+            background: #fff;
         }
+.nominee-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .section-sub-title {
-            font-size: 32px;
-            font-weight: normal;
-            margin-top: 50px;
-            margin-bottom: 25px;
-        }
+    width: 260px;
+    height: 160px;
 
-        .finalist-table {
-    width: 100%;
-    border-collapse: collapse;
+    background: #fff;
+    border: 2px solid #000;
+    text-decoration: none;
+    color: #000;
+
     font-size: 20px;
-    margin-bottom: 40px;
-    table-layout: fixed;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    transition: all 0.15s ease;
+    box-shadow: 2px 2px 0 #000;
 }
 
-.finalist-table td {
-    padding: 6px 10px;
-    vertical-align: top;
-    width: 33.33%;
+/* 悬浮效果 */
+.nominee-link:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 #000;
+    background: #f7f1dd;
 }
 
-
-
-        .finalist-table a.nominee-link {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        .finalist-table a.nominee-link:hover {
-            text-decoration: underline;
-        }
-
-        .finalist-table .winner {
-            font-weight: bold;
-        }
-
-        .finalist-table .special-mention {
-            font-style: italic;
-        }
+/* 点击效果 */
+.nominee-link:active {
+    transform: translate(0px, 0px);
+    box-shadow: 2px 2px 0 #000;
+}
     </style>
 </head>
+
 <body>
 
     <div class="top-nav-bar">
@@ -213,379 +163,22 @@
 
     <div class="container">
 
+
+
         <div class="hero-section" id="home">
             <div class="hero-bg-effect">🎉</div>
         </div>
 
-        <div class="intro-box">
-          李文亚宇宙重要出场人物
+
+        <div class="image-gallery">
+             <a href="LWY.html" class="nominee-link">李文亚宇宙</a>
+            <a href="yongge.html" class="nominee-link">勇哥大厦</a>
+
         </div>
 
-        <div class="content-section" id="finalists">
+        <div class="content-section"></div>
 
-    <h2 class="section-sub-title">李文亚阵营</h2>
-    <table class="finalist-table">
-        <tbody>
-            <tr>
-                <td><strong>所属机构</strong></td>
-                <td><strong>名字</strong></td>
-            </tr>
-
-            <tr>
-                <td>中国天文研究中心</td>
-                <td><a href="https://www.bilibili.com/video/BV1WXSMBXErK?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">张副科长</a></td>
-            </tr>
-
-            <tr>
-                <td>华北电力大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1UjS5BkE52?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">刘建龙教授</a></td>
-            </tr>
-
-            <tr>
-                <td>明迪斯城高等学校</td>
-                <td><a href="https://www.bilibili.com/video/BV1v5SFB2ETa?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">托霍特普教授</a></td>
-            </tr>
-
-            <tr>
-                <td>纽约大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1WgSKByEKQ?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">薛智阳博士</a></td>
-            </tr>
-
-            <tr>
-                <td>刚果科学院</td>
-                <td><a href="https://www.bilibili.com/video/BV1ZHSKBKE9D?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">哈基米院士</a></td>
-            </tr>
-
-            <tr>
-                <td>卢管高级中学</td>
-                <td><a href="https://www.bilibili.com/video/BV15fSeByEP8?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">卢本伟书记</a></td>
-            </tr>
-
-            <tr>
-                <td>东京都国立大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1kNSiBbEKz?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">东雪莲教授</a></td>
-            </tr>
-
-            <tr>
-                <td>武汉大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1eHSiBmE4Z?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">严志雄教授</a></td>
-            </tr>
-
-            <tr>
-                <td>冰岛国家大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1hMSvBBEA4?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">戴·琦巴教授</a></td>
-            </tr>
-
-            <tr>
-                <td>日本下北泽</td>
-                <td><a href="https://www.bilibili.com/video/BV1MdSqB5EZN?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">田所浩二教授</a></td>
-            </tr>
-
-            <tr>
-                <td>合肥理工大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1DwSyBYECi?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">陈永帅教授</a></td>
-            </tr>
-
-            <tr>
-                <td>Open AI</td>
-                <td><a href="https://www.bilibili.com/video/BV15FS2BCEWc?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">山姆·奥特曼CEO</a></td>
-            </tr>
-
-            <tr>
-                <td>新暮里幻想乡大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1mhSpBPEX6?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">博丽灵梦教授</a></td>
-            </tr>
-
-            <tr>
-                <td>庆鹏女子大学</td>
-                <td><a href="https://www.bilibili.com/video/BV16mSpBpEbT?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">冰川纱夜教授</a></td>
-            </tr>
-
-            <tr>
-                <td>光之国</td>
-                <td><a href="https://www.bilibili.com/video/BV15eqCBzEZM?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">贝利亚教授</a></td>
-            </tr>
-            <tr>
-                <td>武汉大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1t9SWBMEz3?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">姜萍教授</a></td>
-            </tr>
-            <tr>
-                <td>6324物理研究所</td>
-                <td><a href="https://www.bilibili.com/video/BV1VvSkBPEzx?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">龙丽研究员</a></td>
-            </tr>
-
-            <tr>
-                <td>6324物理研究所</td>
-                <td><a href="https://www.bilibili.com/video/BV1VvSkBPEzx?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">李占良研究员</a></td>
-            </tr>
-        <tr>
-                <td>taffy研究所</td>
-                <td><a href="https://www.bilibili.com/video/BV1XpiKBtEjx?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">永雏塔菲教授</a></td>
-            </tr>
-         <tr>
-                <td>A Soul</td>
-                <td><a href="https://www.bilibili.com/video/BV14erjBbEia?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">嘉然今天吃什么</a></td>
-            </tr>
-         <tr>
-                <td>斯坦福大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1E7LJ64EMu?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">冈·交利文·亚皮严教授</a></td>
-            </tr>
-         <tr>
-                <td>斯玛·黎雯娅大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1VSR4BKE7H?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">梅玛教授</a></td>
-            </tr>
-        <tr>
-                <td>斯玛·黎雯娅大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1VSR4BKE7H?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">港塞教授</a></td>
-            </tr>
-        <tr>
-                <td>斯玛·黎雯娅大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1VSR4BKE7H?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">马斯勒教授</a></td>
-            </tr>
-             <tr>
-                <td>黑袍纠察队</td>
-                <td><a href="https://www.bilibili.com/video/BV1ZkdGBqEzv?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">士兵男孩</a></td>
-            </tr>
-        </tbody>
-    </table>
-
-
-    <h2 class="section-sub-title">孙笑川阵营</h2>
-    <table class="finalist-table">
-        <tbody>
-            <tr>
-                <td><strong>所属机构</strong></td>
-                <td><strong>名字</strong></td>
-            </tr>
-
-            <tr>
-                <td>114514研究所</td>
-                <td>孙笑川</td>
-            </tr>
-
-            <tr>
-                <td>114514研究所</td>
-                <td>蜜桃乌龙</td>
-            </tr>
-
-            <tr>
-                <td>GTI大洋洲分部</td>
-                <td><a href="https://www.bilibili.com/video/BV1xbUZBbEin?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">大卫·费莱尔</a></td>
-            </tr>
-
-            <tr>
-                <td>北京科学研究院</td>
-                <td><a href="https://www.bilibili.com/video/BV1bbSFBTEii?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">季冬凯主任</a></td>
-            </tr>
-
-            <tr>
-                <td>江苏科技大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1RDSrBAE9m?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">郭伟院士</a></td>
-            </tr>
-
-            <tr>
-                <td>北京大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1e9SrBwEm1?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">阳和平教授</a></td>
-            </tr>
-
-            <tr>
-                <td>东京大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1AiUvBxE45?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">李田所教授</a></td>
-            </tr>
-
-            <tr>
-                <td>武汉大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1BaSWBpEGC?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">许昊龙教授</a></td>
-            </tr>
-        <tr>
-                <td>北京大学</td>
-                <td><a href="" class="nominee-link">墨梓校长</a></td>
-            </tr>
-        <tr>
-                <td>北京大学</td>
-                <td><a href="" class="nominee-link">雷娜副校长</a></td>
-            </tr>
-        <tr>
-                <td>上海男子职业技术学校</td>
-                <td><a href="https://www.bilibili.com/video/BV1ZviTBuE62?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">吴条悟教授</a></td>
-            </tr>
-        <tr>
-                <td>双城大学</td>
-                <td><a href="https://www.bilibili.com/video/BV11givBFE7h?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">辛吉德校长</a></td>
-            </tr>
-        <tr>
-                <td>美国总统</td>
-                <td><a href="https://www.bilibili.com/video/BV1WvisBAEfH?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">特朗普总统</a></td>
-            </tr>
-        <tr>
-                <td>郑州大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1cRraBcEag?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">宋波教授</a></td>
-            </tr>
-        <tr>
-                <td>美国州立大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1rBrvBBEBo?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">布鲁斯·韦恩</a></td>
-            </tr>
-<tr>
-                <td>香港九一大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1A8rHBqE9K?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">张楚岚教授</a></td>
-            </tr>
-        <tr>
-                <td>日本女学者</td>
-                <td><a href="https://www.bilibili.com/video/BV1tqz7BbEfB?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">待兼唐怀瑟</a></td>
-            </tr>
-<tr>
-                <td>114514研究所 麻省理工大学</td>
-                <td><a href="" class="nominee-link">侯国玉教授</a></td>
-            </tr>
-        <tr>
-                <td>南京大学</td>
-                <td><a href="https://www.bilibili.com/video/BV14Ef7BgEgA?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">王楚淇教授</a></td>
-            </tr>
-        <tr>
-                <td>中国人民大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1MbX8B8EpG?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">陈人杰教授</a></td>
-            </tr>
-        <tr>
-                <td>武汉理工大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1MbX8B8EpG?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">刘浩文教授</a></td>
-            </tr>
-        <tr>
-                <td>天体物理国家工程实验室</td>
-                <td><a href="https://www.bilibili.com/video/BV1q6V665Eyt?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">肖际霸教授</a></td>
-            </tr>
-         <tr>
-                <td>缅甸医科大学附属医院</td>
-                <td><a href="https://www.bilibili.com/video/BV1FDVU66Ery?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">白锁成主席</a></td>
-            </tr>
-         <tr>
-                <td>哈佛大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1ndLg6zEXQ?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">张雪峰教授</a></td>
-            </tr>
-         <tr>
-                <td>四川大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1FH5b6QErM?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">雪之下阳乃教授</a></td>
-            </tr>
-         <tr>
-                <td>华盛顿医学研究中心</td>
-                <td><a href="https://www.bilibili.com/video/BV1op5s6eE3q?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">王伟恒教授</a></td>
-            </tr>
-         <tr>
-                <td>up主</td>
-                <td><a href="https://www.bilibili.com/video/BV1WZ7B6fEvk?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">碧桑骂Dell</a></td>
-            </tr>
-         <tr>
-                <td>萝莉岛</td>
-                <td><a href="https://www.bilibili.com/video/BV1ZkdGBqEzv?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">爱泼斯坦岛主</a></td>
-            </tr>
-         <tr>
-                <td>南京大学</td>
-                <td><a href="https://www.bilibili.com/video/BV183RsBsEvS?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">明日香教授</a></td>
-            </tr>
-         <tr>
-                <td>复旦大学</td>
-                <td><a href="https://www.bilibili.com/video/BV179D6BKE7G?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">洪伟炳教授</a></td>
-            </tr>
-        <tr>
-                <td>南京中医药大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1WYwJzJEqg?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">卢伟本教授</a></td>
-            </tr>
-        <tr>
-                <td>清华大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1D1w3zMEvk?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">王书涵校长</a></td>
-            </tr>
-        <tr>
-                <td>清华大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1D1w3zMEvk?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">高城德教授</a></td>
-            </tr>
-         <tr>
-                <td>清华大学</td>
-                <td><a href="https://www.bilibili.com/video/BV1D1w3zMEvk?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">朱红阳教授</a></td>
-            </tr>
-         <tr>
-                <td>江南大学</td>
-                <td>唐振钦教授</td>
-            </tr>
-         <tr>
-                <td>中国科学技术大学</td>
-                <td>鄢懋卿教授</td>
-            </tr>
-         <tr>
-                <td>陕西省六九中学</td>
-                <td>李赣校长</td>
-            </tr>
-         <tr>
-                <td>常熟保镖</td>
-                <td>阿诺</td>
-            </tr>
-         <tr>
-                <td>神柱集团</td>
-                <td><a href="https://www.bilibili.com/video/BV1WUd3ByEVw?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">戴维维教授</a></td>
-            </tr>
-         <tr>
-                <td>韩国k公司</td>
-                <td><a href="https://www.bilibili.com/video/BV1Mw5b6vE44?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">东朗教授</a></td>
-            </tr>
-         <tr>
-                <td>114514研究所</td>
-                <td>麦克·迪圣塔教授</td>
-            </tr>
-         <tr>
-                <td>武汉大学</td>
-                <td>李坤鹏教授</td>
-            </tr>
-         <tr>
-                <td>麻省理工大学</td>
-                <td>刘天保教授</td>
-            </tr>
-        <tr>
-                <td>中国天体物理研究所</td>
-                <td>郑永康教授</td>
-            </tr>
-        </tbody>
-    </table>
-
-            <h2 class="section-sub-title">蜘蛛巢大学阵营</h2>
-    <table class="finalist-table">
-         <tbody>
-          <tr>
-                <td><strong>职务</strong></td>
-                <td><strong>名字</strong></td>
-            </tr>
-         <tr>
-                <td>校长</td>
-                <td><a href="https://www.bilibili.com/video/BV1MdL863EJv?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">赫尔墨斯</a></td>
-            </tr>
-         <tr>
-                <td>教授</td>
-                <td><a href="https://www.bilibili.com/video/BV1xnRsB7EvQ?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">叶建业</a></td>
-            </tr>
-         <tr>
-                <td>教授</td>
-                <td><a href="https://www.bilibili.com/video/BV1ToRiBpEex?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">里恩</a></td>
-            </tr>
-          <tr>
-                <td>教授</td>
-                <td><a href="https://www.bilibili.com/video/BV1gFdPBNEkz?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">马蒂亚斯</a></td>
-            </tr>
-         </tbody>
- </table>
-
-              <h2 class="section-sub-title">魔女岛大学阵营</h2>
-            <table class="finalist-table">
-                <tr>
-                <td><strong>职务</strong></td>
-                <td><strong>名字</strong></td>
-            </tr>
-         <tr>
-                <td>校长</td>
-                <td><a href="https://www.bilibili.com/video/BV1VdL164E4J?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">月代雪</a></td>
-            </tr>
-                <tr>
-                <td>教授</td>
-                <td><a href="https://www.bilibili.com/video/BV15mi1ByEp1?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">二阶堂希罗</a></td>
-            </tr>
-            </table>
-</div>
     </div>
+
 </body>
 </html>
