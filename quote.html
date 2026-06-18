@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css" />
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />
+    <title>中国抽象百科</title>
+
+    <style>
+        :root {
+            --nav-bg: #f3ebd1;
+            --page-bg: #faf6e8;
+            --card-bg: #ffffff;
+            --text-color: #000000;
+            --link-color: #0022ff;
+            --border-thick: 2px solid #000000;
+            --border-thin: 1px solid #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "LXGW WenKai Screen", Courier, monospace, 'PingFang SC', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 5rem;
+        }
+
+        .top-nav-bar {
+            background-color: var(--nav-bg);
+            width: 100%;
+            padding: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-btn {
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: var(--border-thick);
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.1s, background-color 0.1s;
+        }
+
+        .nav-btn:hover {
+            background-color: #f0ebd8;
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-section {
+            position: relative;
+            margin: 80px auto 50px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-bg-effect {
+            position: absolute;
+            font-size: 160px;
+            opacity: 0.12;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+        }
+
+        .logo-board {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .badge-the {
+            background: #000000;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 6px;
+            letter-spacing: 1px;
+            align-self: flex-start;
+            margin-bottom: -2px;
+            margin-left: 2px;
+        }
+
+        .tile-container {
+            display: flex;
+        }
+
+        .letter-tile {
+            width: 46px;
+            height: 46px;
+            background: #ffffff;
+            border: var(--border-thin);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: bold;
+            margin-right: -1px;
+        }
+
+        .badge-awards {
+            background: #000000;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 4px 14px;
+            letter-spacing: 2px;
+            align-self: flex-end;
+            margin-top: -2px;
+            margin-right: -10px;
+        }
+
+        .intro-box {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 25px 40px;
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+        }
+
+        .content-section {
+            max-width: 960px;
+            margin: 80px auto 0 auto;
+            text-align: left;
+        }
+
+        .finalists-main-title {
+            font-size: 48px;
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+
+        .finalists-caption {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .section-sub-title {
+            font-size: 32px;
+            font-weight: normal;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+
+        .finalist-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px;
+    margin-bottom: 40px;
+    table-layout: fixed;
+}
+
+.finalist-table td {
+    padding: 6px 10px;
+    vertical-align: top;
+    width: 33.33%;
+}
+
+
+
+        .finalist-table a.nominee-link {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .finalist-table a.nominee-link:hover {
+            text-decoration: underline;
+        }
+
+        .finalist-table .winner {
+            font-weight: bold;
+        }
+
+        .finalist-table .special-mention {
+            font-style: italic;
+        }
+        .quote-list {
+    max-width: 960px;
+    margin: 40px auto;
+}
+
+.quote-item {
+    background: var(--card-bg);
+    border: var(--border-thin);
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+}
+
+.quote-item p {
+    margin: 6px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="top-nav-bar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="archive.html" class="nav-btn">Archives</a>
+    </div>
+
+    <div class="container">
+
+
+
+        <div class="hero-section" id="home">
+            <div class="hero-bg-effect">🎉</div>
+        </div>
+
+        <!-- 主标题 -->
+        <div class="intro-box">
+            名人名言
+        </div>
+
+        <div class="quote-list">
+
+    <div class="quote-item">
+        <p><strong>人名：</strong> 永雏塔菲</p>
+        <p><strong>名言：</strong> 红叶最多情，taffy不多情，taffy只爱雏草姬</p>
+    </div>
+
+    <div class="quote-item">
+        <p><strong>人名：</strong> 永雏塔菲</p>
+        <p><strong>名言：</strong> 你们都是虾仁松手，taffy到死都不会放过你们的</p>
+    </div>
+
+    <div class="quote-item">
+        <p><strong>人名：</strong> 永雏塔菲</p>
+        <p><strong>名言：</strong> 为什么这个表情，面对摄像头要开心喵，不许这样瞪妈妈</p>
+    </div>
+
+    <div class="quote-item">
+        <p><strong>人名：</strong> 永雏塔菲</p>
+        <p><strong>名言：</strong> 嘻嘻嘻嘻嘻嘻嘻，呀哈哈哈哈哈哈哈</p>
+    </div>
+
+    <div class="quote-item">
+        <p><strong>人名：</strong> 永雏塔菲</p>
+        <p><strong>名言：</strong> 关注塔菲喵，关注塔菲谢谢喵，塔不灭，塔不灭，雏草姬不灭</p>
+    </div>
+
+    <div class="quote-item">
+        <p><strong>人名：</strong> 永雏塔菲</p>
+        <p><strong>名言：</strong> 喜欢taffy的请举手，于是地球就变成了一个海胆</p>
+    </div>
+
+    <div class="quote-item">
+        <p><strong>人名：</strong> 阿诺</p>
+        <p><strong>名言：</strong> 那我问你，你是男的女的？如果你是女的你说这样的话，啊，那我问你，你你你是女孩子，那我问你，那那你那头顶是不是不是尖的？那我那我问你，你头顶是尖的呢？还是秃顶的，啊，还是，啊，染黄色染红色的，那我问你，啊，还是戴假发的，如果是如果你是男的那我问你，啊，你说我的头是尖的，那我问你那你是不是秃头？那你是不是光头？啊？你是光头还是有头发的，啊？那我问你，我头顶，我我头尖怎么了？我就尖怎么了？哎，我就尖怎么了？我就头顶尖怎么了？哎，我头顶尖你难道你看不惯么？我头顶就是尖的怎么了？我就是尖，我就是要尖怎么了，啊，你看不惯吗，啊。</p>
+    </div>
+
+    <div class="quote-item">
+        <p><strong>人名：</strong> 时团粉丝</p>
+        <p><strong>名言：</strong> 所有骂过时代少年团的人来看一看这一条帖子我建议所有骂过时代少年团的人来看这一条粉，这一条视屏。首先你说马嘉祺不配你知道吗马嘉祺是小气球，是马嘉祺是小气球是爆米花们的光，所以你不要说我们家不配thank you谢谢你，还有你说牛尿纹不配，牛尿纹站在他的制高点，而且狼王本身就是狼王，只有满月才会需要狼王，当光芒万丈的时候你才会希望说没有光芒（笑）你要点脸好吗姐姐姐，哥哥姐姐还要点脸好吗我们家的热度是这样给你们蹭的吗请不要在我们家肆无忌惮的蹭热度我们家的热度本来就不是给你们蹭的你们凭什么说我们家的孩子们孩子们一个个的比一个个差我们家的热度让你们蹭了吗你们有对我们家说过什么吗蹭我们家热度的时候不会，不会来报告一声吗。那么哥哥姐姐我问你个话题，凌晨五点的时候你是否在睡觉我们家的小孩儿在念舞生病念舞生病念舞发烧念舞你觉得你的热度蹭的很了呗是吧你不以为时代峰峻的官方不会管我们这些显微镜大姐自然会扒出你的黑尿和你的娘，和你的娘不娘。林二岁，你说你觉得你自己很牛逼但是我就想告诉你你这个娘炮你懂吗，还有啊就阿泽我想告诉你的就是你的声音虽然很好听，可是，唉，没有我马哥好听。</p>
+    </div>
+
+    <div class="quote-item">
+        <p><strong>人名：</strong> 马保国</p>
+        <p><strong>名言：</strong> 唉...朋友们好啊，我是浑元形意太极门掌门人马保国。刚才有个朋友 问我，马老师发生剩么事了？我说怎么回事。给我发来几张截图。我一看，奥，原来是佐田，有两个年轻人，三十多岁，一个体重90多公斤，一个体重80多公斤。塔们说，唉... 有一个说是，我在健身房练功 颈椎练坏了。马老师，你能不能教教我浑元功法，唉...帮助治疗一下我的颈椎病。我说可以，我说你在健身房练死劲儿 不好用。他不服气，唉..我说小朋友，你两个手来遮我一个手指头。他遮不动，他说你这也没用(吭)，我说我这个有用，这是化劲儿。传统功夫是讲化劲儿的，四两拨千斤。二百多斤的英国大力士都握不动我这一个手指，啊。塔说要和我试试，我说可以。唉...我一说，他啪就站起来了，很快啊！然后上来就是 一个左正蹬 (吭) 一个右鞭tei，一个左刺拳。我cuan部防区 防出去了啊。防出去以后，自然是传统功夫以点到为止，右拳放在了鼻子上，没打他。我笑一下，准备收拳，因为这时间按传统功夫的点到为止，他已经输了。如果我这一拳发力，一拳就把他鼻子打咕遮了，放在鼻子上没有打他，他也承认 我先打到他面部。塔不知道拳放在他鼻子上，塔承认我先打到他面部，啊！我收拳的时间不打了，他突然袭击，左刺拳 来打我脸，啊。我大意了啊，没有闪。唉...他的左拳给我眼 啊右眼 蹭了一下，胆没关系啊，塔也说，啊塔截图也说了，两分多钟以后当时流眼泪了，捂着眼，我说停停。然后两分(小停顿)钟以后，额两分多钟以后，唉..就好了。我说小伙子你不讲武德，你不懂。(他说) 马老师，对不 对不起，我不懂规矩，啊我是 他说他是乱打的。他可不是乱打的啊，蒸蹬 鞭tei 左刺拳，训练有素，后来他说他练过 三四年泰拳，啊，看来是 有bear来。这两个 年轻人不讲武德，来骗，来偷吸！我69岁的 老同志。这好吗？这不好。我劝 这位 年轻人，耗子尾汁，好好反思。以后不要再犯 这样的聪明，小聪明 啊！额...武林 要以和为贵，要讲武德。 不要搞 窝里斗。谢谢朋友们！</p>
+    </div>
+            <div class="quote-item">
+        <p><strong>人名：</strong> 黄春生</p>
+        <p><strong>名言：</strong> 我们遇到什么困难，也不要怕，微笑着面对它，消除恐惧的最好办法就是面对恐惧，坚持，才是胜利！加油，奥利给！</p>
+            </div>
+
+             <div class="quote-item">
+        <p><strong>人名：</strong> 董广君</p>
+        <p><strong>名言：</strong> 菜就多练，输不起就别玩，以前是以前现在是现在，要是一直拿以前当现在，怎么不拿出生的时候对比啊。</p>
+            </div>
+
+</div>
+
+
+
+
+        </tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>
