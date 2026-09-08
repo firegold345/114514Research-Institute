@@ -1,394 +1,426 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css" />
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />
-    <title>中国抽象百科</title>
-    <style>
-        :root {
-            --nav-bg: #f3ebd1;
-            --page-bg: #faf6e8;
-            --card-bg: #ffffff;
-            --text-color: #000000;
-            --link-color: #0022ff;
-            --border-thick: 2px solid #000000;
-            --border-thin: 1px solid #000000;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: "LXGW WenKai Screen", Courier, monospace, 'PingFang SC', sans-serif;
-            background-color: var(--page-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding-bottom: 5rem;
-        }
-
-        .top-nav-bar {
-            background-color: var(--nav-bg);
-            width: 100%;
-            padding: 12px 0;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .nav-btn {
-            background: var(--card-bg);
-            color: var(--text-color);
-            border: var(--border-thick);
-            padding: 6px 16px;
-            font-size: 14px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: transform 0.1s, background-color 0.1s;
-        }
-
-        .nav-btn:hover {
-            background-color: #f0ebd8;
-            transform: translateY(-1px);
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .hero-section {
-            position: relative;
-            margin: 80px auto 50px auto;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-bg-effect {
-            position: absolute;
-            font-size: 160px;
-            opacity: 0.12;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-15deg);
-            pointer-events: none;
-            user-select: none;
-            z-index: 1;
-        }
-
-        .logo-board {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .badge-the {
-            background: #000000;
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: bold;
-            padding: 2px 6px;
-            letter-spacing: 1px;
-            align-self: flex-start;
-            margin-bottom: -2px;
-            margin-left: 2px;
-        }
-
-        .tile-container {
-            display: flex;
-        }
-
-        .letter-tile {
-            width: 46px;
-            height: 46px;
-            background: #ffffff;
-            border: var(--border-thin);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            font-weight: bold;
-            margin-right: -1px;
-        }
-
-        .badge-awards {
-            background: #000000;
-            color: #ffffff;
-            font-size: 13px;
-            font-weight: bold;
-            padding: 4px 14px;
-            letter-spacing: 2px;
-            align-self: flex-end;
-            margin-top: -2px;
-            margin-right: -10px;
-        }
-
-        .intro-box {
-            background-color: var(--card-bg);
-            border-radius: 14px;
-            padding: 25px 40px;
-            max-width: 960px;
-            margin: 0 auto;
-            text-align: left;
-            font-size: 19px;
-            letter-spacing: 0.5px;
-        }
-
-        .content-section {
-            max-width: 960px;
-            margin: 80px auto 0 auto;
-            text-align: left;
-        }
-
-        .finalists-main-title {
-            font-size: 48px;
-            font-weight: normal;
-            text-align: center;
-            margin-bottom: 35px;
-            letter-spacing: 1px;
-        }
-
-        .finalists-caption {
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            color: #000000;
-        }
-
-        .section-sub-title {
-            font-size: 32px;
-            font-weight: normal;
-            margin-top: 50px;
-            margin-bottom: 25px;
-        }
-
-        .finalist-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 20px;
-            margin-bottom: 40px;
-        }
-
-        .finalist-table td {
-            padding: 6px 0;
-            vertical-align: top;
-        }
-
-        .finalist-table td.col-idx {
-            width: 45px;
-        }
-
-        .finalist-table td.col-name {
-            width: 60%;
-            padding-right: 30px;
-        }
-
-        .finalist-table td.col-author {
-            width: 35%;
-        }
-
-        .finalist-table a.nominee-link {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        .finalist-table a.nominee-link:hover {
-            text-decoration: underline;
-        }
-
-        .finalist-table .winner {
-            font-weight: bold;
-        }
-
-        .finalist-table .special-mention {
-            font-style: italic;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="114514研究所" />
+    <title>114514研究所</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/Web/css/Global.css" />
+    <link rel="stylesheet" href="/Web/css/SoruxGPT.css" />
 </head>
-<body>
 
-    <div class="top-nav-bar">
-        <a href="index.html" class="nav-btn">Home</a>
-        <a href="archive.html" class="nav-btn">Archives</a>
+<body>
+    <div class="top-strip">
+        <div class="inner">
+            <span>114514研究所</span>
+            <span id="clock">SYSTEM TIME --:--:--</span>
+        </div>
     </div>
 
-    <div class="container">
+    <div class="site-shell">
+        <header>
+            <div class="emblem" aria-label="114514研究所徽记">★</div>
+            <div class="brand">
+                <h1>114514研究所</h1>
+                <p>RESEARCH · RECORD · RESTRICT</p>
+                <button class="mobile-nav" id="menuBtn">切换导航</button>
+            </div>
+        </header>
 
-        <div class="hero-section" id="home">
-            <div class="hero-bg-effect">🎉</div>
+        <div class="layout">
+            <aside id="sidebar">
+                <div class="side-title">索引</div>
+                <nav class="nav-list">
+                    <a class="active" href="#home">数据库</a>
+                    <a href="#cases">危险档案</a>
+                    <a href="#staff">议会</a>
+                    <a href="#action">行动组</a>
+                    <a href="#events">近期事件</a>
+                    <a href="#protocols">处理规程</a>
+                    <a href="#terminal">终端接入</a>
+                </nav>
+            </aside>
 
-            <div class="logo-board">
-                <div class="badge-the">Chinese</div>
-
-                <div class="tile-container">
-                    <div class="letter-tile">A</div>
-                    <div class="letter-tile">B</div>
-                    <div class="letter-tile">S</div>
-                    <div class="letter-tile">T</div>
-                    <div class="letter-tile">R</div>
-                    <div class="letter-tile">A</div>
-                    <div class="letter-tile">C</div>
-                    <div class="letter-tile">T</div>
+            <main id="home">
+                <div class="notice">
+                    <strong>系统通告 / 09-01</strong><br />
+                    “打倒李文亚，消灭伪科学”已于第23届批判李文亚大会被确立为114514研究所的指导思想。
                 </div>
 
-                <div class="badge-awards">Pedia</div>
-            </div>
+                <section class="hero">
+                    <div class="hero-kicker">Mission</div>
+                    <h2>宗旨</h2>
+                    <p>
+                        114514研究所的宗旨是探索超自然科学，消灭以李文亚为首的反动民科集团。
+                    </p>
+                </section>
+
+                <section id="cases">
+                    <h2 class="section-title">危险档案</h2>
+                    <div class="archive-grid">
+                        <article class="card">
+                            <div class="card-head">
+                                <span>S-001</span>
+                                <span class="tag">实体</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>李文亚教授</h3>
+                                <p>极度危险的人民科学家，提出了超过十种重要的科学发现。在研究所对其的所有干扰破坏中幸存。对该实体的主动物理消灭被认为是不可行的。预计该实体将在未来数年内因糖尿病而主动灭亡。</p>
+                                <div class="meta">
+                                    <span>权限：A-1</span>
+                                    <span>状态：监测中</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-head">
+                                <span>S-002</span>
+                                <span class="tag">组织</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>蜘蛛巢大学</h3>
+                                <p>一所位于韩国的大学，其对李文亚教授提供了大量支援。研究所数月前对蜘蛛巢大学的进攻宣告失败。由巴兰尼科夫领导的突击分队在进入大学校园后遭到驻韩美军的强烈抵抗，随后撤退。</p>
+                                <div class="meta">
+                                    <span>权限：A-2</span>
+                                    <span>状态：监测中</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-head">
+                                <span>S-003</span>
+                                <span class="tag">实体</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>永雏塔菲教授</h3>
+                                <p>一个来自17世纪的天才发明家，乘坐时光机来到二十一世纪的中国。曾向李文亚教授发送私信表示支持。该实体发明的时光机被认为是严重危害研究所安全的异常类武器。</p>
+                                <div class="meta">
+                                    <span>权限：A-2</span>
+                                    <span>状态：监测中</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-head">
+                                <span>SS-001</span>
+                                <span class="tag">组织</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>GOC全球超自然联盟</h3>
+                                <p>是一个公开的毁灭超自然生物的政治联盟，对李文亚教授提供了一系列支持，其拥有的一系列超自然武器被认为是对研究所的极大威胁。</p>
+                                <div class="meta">
+                                    <span>权限：A-1</span>
+                                    <span>状态：监测中</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+
+                <section id="staff">
+                    <h2 class="section-title">O5议会议员</h2>
+                    <div class="archive-grid">
+                        <article class="card">
+                            <div class="card-head">
+                                <span>P-001</span>
+                                <span class="tag">所长</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>孙笑川</h3>
+                                <p>114514研究所创始人兼所长，通常认为是实体奥山道朗生命的延续。两者均为6324号精神体外化实体，该精神体被认为诞生自前寒武纪。孙笑川在历次针对李文亚的行动中担任总指挥。</p>
+                                <div class="meta">
+                                    <span>状态：在岗</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-head">
+                                <span>P-002</span>
+                                <span class="tag">秘书</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>东雪莲</h3>
+                                <p>孙笑川夫人。曾在未经研究所授权的情况下绑架过永雏塔菲，并被徐Toso的秘密摄像机记录，该行为被认为是导致永雏塔菲倒向李文亚教授的关键证据。</p>
+                                <div class="meta">
+                                    <span>状态：在岗</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="card-head">
+                                <span>P-004</span>
+                                <span class="tag">议长</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>陈人杰</h3>
+                                <p>中国人民大学教授。</p>
+                                <div class="meta">
+                                    <span>状态：在岗</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="card-head">
+                                <span>P-003</span>
+                                <span class="tag">委员</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>王书涵</h3>
+                                <p>清华大学校长。</p>
+                                <div class="meta">
+                                    <span>状态：外勤中</span>
+                                </div>
+                            </div>
+                        </article>
+
+
+
+                       <article class="card">
+                            <div class="card-head">
+                                <span>P-005</span>
+                                <span class="tag">委员</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>王楚淇</h3>
+                                <p>南京大学教授。</p>
+                                <div class="meta">
+                                    <span>状态：在岗</span>
+                                </div>
+                            </div>
+                        </article>
+
+                      <article class="card">
+                            <div class="card-head">
+                                <span>P-006</span>
+                                <span class="tag">委员</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>侯国玉</h3>
+                                <p>尊尼获加大学校长。</p>
+                                <div class="meta">
+                                    <span>状态：在岗</span>
+                                </div>
+                            </div>
+                        </article>
+
+                      <article class="card">
+                            <div class="card-head">
+                                <span>P-007</span>
+                                <span class="tag">委员</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>碧桑驾dell</h3>
+                                <p>西北工业大学硕士。</p>
+                                <div class="meta">
+                                    <span>状态：在岗</span>
+                                </div>
+                            </div>
+                        </article>
+
+                      <article class="card">
+                            <div class="card-head">
+                                <span>P-008</span>
+                                <span class="tag">委员</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>许昊龙</h3>
+                                <p>武汉大学教授。</p>
+                                <div class="meta">
+                                    <span>状态：在岗</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+               <section id="action">
+          <h2 class="section-title">A2行动组</h2>
+          <div class="archive-grid">
+            <article class="card">
+              <div class="card-head">
+                <span>P-001</span>
+                <span class="tag">近卫</span>
+              </div>
+              <div class="card-body">
+                <h3>巴兰尼科夫</h3>
+                <p>特勤干员，在对泰阳丰泽园实施无人机与生化武器袭击中不幸牺牲</p>
+                <div class="meta">
+                  <span>状态：牺牲</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-head">
+                <span>P-002</span>
+                <span class="tag">特种</span>
+              </div>
+              <div class="card-body">
+                <h3>尤丁采夫</h3>
+                <p>特勤干员，在对泰阳丰泽园实施无人机与生化武器袭击中不幸牺牲</p>
+                <div class="meta">
+                  <span>状态：牺牲</span>
+                </div>
+              </div>
+            </article>
+
+             <article class="card">
+              <div class="card-head">
+                <span>P-003</span>
+                <span class="tag">狙击</span>
+              </div>
+              <div class="card-body">
+                <h3>布亚诺夫</h3>
+                <p>特勤干员，在对泰阳丰泽园实施无人机与生化武器袭击中不幸牺牲</p>
+                <div class="meta">
+                  <span>状态：牺牲</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+ <section id="action2">
+          <h2 class="section-title">A4行动组</h2>
+          <div class="archive-grid">
+            <article class="card">
+              <div class="card-head">
+                <span>P-001</span>
+                <span class="tag">重装</span>
+              </div>
+              <div class="card-body">
+                <h3>阿诺</h3>
+                <p>常熟保镖，居住于常熟金山苑小区，参与了史诗怒火打击行动。</p>
+                <div class="meta">
+                  <span>状态：在岗</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-head">
+                <span>P-002</span>
+                <span class="tag">术士</span>
+              </div>
+              <div class="card-body">
+                <h3>马保国</h3>
+                <p>南阳混元形意太极拳掌门人，是李文亚教授的同乡，曾称李文亚为“精神病”。</p>
+                <div class="meta">
+                  <span>状态：在岗</span>
+                </div>
+              </div>
+            </article>
+
+             <article class="card">
+              <div class="card-head">
+                <span>P-003</span>
+                <span class="tag">先锋</span>
+              </div>
+              <div class="card-body">
+                <h3>大卫·费莱尔</h3>
+                <p>GTI大洋洲分部特工，参与过史诗怒火行动</p>
+                <div class="meta">
+                  <span>状态：在岗</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+
+                <section id="events">
+                    <h2 class="section-title">近期事件记录</h2>
+                    <div class="timeline">
+                        <article>
+                            <time>2026-08-28 / 22:40</time>
+                            <h4>第23届批判李文亚大会召开</h4>
+                            <p>大会正式确立了由114514研究所联合多所高校组建的反李文亚联盟，并确立了大会指导思想</p>
+                        </article>
+                        <article>
+                            <time>2026-07-20 / 04:12</time>
+                            <h4>李文亚教授获奖</h4>
+                            <p>李文亚教授重新被观察到活动迹象，并获得了多所研究所颁发的荣誉证书。</p>
+                        </article>
+                        <article>
+                            <time>2026-06-11 / 01:55</time>
+                            <h4>史诗怒火行动</h4>
+                            <p>孙笑川联合四十位教授对李文亚发动史诗怒火打击行动，部分作战目标获得实现。</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="protocols">
+                    <h2 class="section-title">处理规程</h2>
+
+                    <details>
+                        <summary>规程 01 — 未分类现象上报</summary>
+                        <div>
+                            首次发现未知事件时，应优先保留原始记录、时间戳与环境参数。任何未经验证的推断不得写入主档案，只能附加在观察备注中。
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>规程 02 — 档案权限分级</summary>
+                        <div>
+                            A 级：研究所成员不可擅自接触的实体或组织；B 级：三人或三人以上小组可接触该类实体或组织；C 级：可单人接触的实体或组织
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>规程 03 — 信息隔离</summary>
+                        <div>
+                            当记录包含可能影响观察行为的信息时，应使用脱敏版本进行内部流转，并将原始材料转移至离线存储节点。
+                        </div>
+                    </details>
+                </section>
+
+                <section id="terminal" class="terminal" aria-label="模拟终端">
+                    <div>&gt; CONNECT 114514 Institution</div>
+                    <div>&gt; STATUS: AUTHENTICATED / LIMITED MODE</div>
+                    <div>&gt; INDEX COUNT: 428 FILES</div>
+                    <div>&gt; LAST SYNC: 2026-09-07 22:58:11</div>
+                    <div>&gt; READY <span class="cursor"></span></div>
+                </section>
+            </main>
         </div>
 
-        <div class="intro-box">
-           本站是中国抽象百科（Chinese Abstract Pedia）。下面是2026年中国抽象奖（The Abstract Award）入围名单。获胜者由粗体表示。
-        </div>
-
-        <div class="content-section" id="finalists">
-
-            <h1 class="finalists-main-title">2026 Final List</h1>
-
-            <table class="finalist-table">
-                <tbody>
-                    <tr>
-                        <td class="col-idx">A</td>
-                        <td class="col-name"><strong>Physiology or Medicine Prize</strong></td>
-                        <td class="col-author"><strong>Author</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">1</td>
-                        <td><a href="https://www.bilibili.com/video/BV1B69aB9EBY?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Blackbody Biology Theory</a></td>
-                        <td class="col-author">Wenya Li </td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">2</td>
-                        <td><a href="https://www.bilibili.com/video/BV1MJ4m1h76o?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><strong>Biosynthesis Theory</strong></a></td>
-                        <td class="col-author"><strong>Changwen Wang</strong></td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                    </tr>
-
-
-
-                    <tr>
-                        <td class="col-idx">B</td>
-                        <td class="col-name"><strong>Physics Prize</strong></td>
-                        <td class="col-author"><strong>Author</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">1</td>
-                        <td><a href="https://www.bilibili.com/video/BV1UwqdYzEDD?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Pangu Equation</a></td>
-                        <td class="col-author">Jianlei Yang </td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">2</td>
-                        <td><a href="https://www.bilibili.com/video/BV1MnVdzWEYC?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Unified Field Theory</a></td>
-                        <td class="col-author">Xiangqian Zhang </td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">3</td>
-                        <td><a href="https://www.bilibili.com/video/BV1sfmeBoEHK?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><strong>Twelve Kinds of Earth Motions</strong></a></td>
-                        <td class="col-author"><strong>Wenya Li</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">4</td>
-                        <td><a href="https://www.bilibili.com/video/BV1YFrPBPExo?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Three Gravity Ranges</a></td>
-                        <td class="col-author">Wenya Li </td>
-                    </tr>
-                     <tr>
-                        <td> </td>
-                    </tr>
-
-
-
-                    <tr>
-                        <td class="col-idx">C</td>
-                        <td class="col-name"><strong>Chemistry Prize</strong></td>
-                        <td class="col-author"><strong>Name</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">1</td>
-                        <td><a href="#" class="nominee-link">Series Alcohol Burner Experiment</a></td>
-                        <td class="col-author">Lavaxi</td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">2</td>
-                        <td><a href="https://www.bilibili.com/video/BV1QXMpz9Etu?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><strong>Synthesis of Cp4N6Hf2O</strong></a></td>
-                        <td class="col-author"><strong>Qun Qing|Ultramarine</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">3</td>
-                        <td><a href="https://www.bilibili.com/video/BV1JzVGzHEny?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link">Flame pH Study</a></td>
-                        <td class="col-author">Scaramouche Classroom</td>
-                    </tr>
-                     <tr>
-                        <td> </td>
-                    </tr>
-
-
-
-
-                    <tr>
-                        <td class="col-idx">D</td>
-                        <td class="col-name"><strong>Literature Prize</strong></td>
-                        <td class="col-author"><strong>Name</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">1</td>
-                        <td><a href="https://www.bilibili.com/video/BV1UiRZBLEVa?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><em><strong>Elegy of War</strong></em></a></td>
-                        <td class="col-author"><strong>Anonymous</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">2</td>
-                        <td><a href="https://www.bilibili.com/video/BV1cx4y147Sy?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><em>Bizarre Bumper Car Battle</em></a></td>
-                        <td class="col-author">Anonymous</td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">3</td>
-                        <td><a href="https://www.bilibili.com/video/BV1jB9MYtEPr?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><em>Galaxy Battlefield</em></a></td>
-                        <td class="col-author">Anonymous</td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">4</td>
-                        <td><a href="https://www.bilibili.com/video/BV1ovoBYQEZt?vd_source=81f8148d4d78c5297e373872a7f4c4f3" class="nominee-link"><em>National Server Si Kongzhen</em></a></td>
-                        <td class="col-author">Anonymous</td>
-                    </tr>
-                     <tr>
-                        <td> </td>
-                    </tr>
-
-
-
-                    <tr>
-                        <td class="col-idx">E</td>
-                        <td class="col-name"><strong>Lifetime Achievement Award</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">1</td>
-                        <td><a href="https://baike.baidu.com/item/%E5%85%94%E5%A8%98/65682264" class="nominee-link">Li Xiong</a></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">2</td>
-                        <td><a href="https://mzh.moegirl.org.cn/%E6%B0%B8%E9%9B%8F%E5%A1%94%E8%8F%B2" class="nominee-link"><strong>Ace Taffy</strong></a></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">3</td>
-                        <td><a href="https://baike.baidu.com/item/%E5%AD%99%E7%AC%91%E5%B7%9D/24368552" class="nominee-link">Xiaochuan Sun</a></td>
-                    </tr>
-                    <tr>
-                        <td class="col-idx">4</td>
-                        <td><a href="https://baike.baidu.com/item/%E8%8C%83%E5%B0%8F%E5%8B%A4/20198128" class="nominee-link">Xiaoqin Fan</a></td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-
+        <footer>
+            <span>BUILD 26.09 / NODE 04</span>
+        </footer>
     </div>
 
+    <script>
+        const clock = document.getElementById("clock");
+
+        function updateClock() {
+            const now = new Date();
+            const t = now.toLocaleTimeString("zh-CN", { hour12: false });
+            clock.textContent = "SYSTEM TIME " + t;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        document.getElementById("menuBtn").addEventListener("click", () => {
+            document.getElementById("sidebar").classList.toggle("open");
+        });
+
+        function fakeLogin() {
+            alert("演示页面：身份验证模块未连接真实后台。");
+        }
+    </script>
+    <script src="/Static/js/jquery.js">
+    </script>
+    <script src="/Static/js/Global.js">
+    </script>
+    <script src="/Web/js/Global.js">
+    </script>
+    <script src="/Web/js/SoruxGPT.js">
+    </script>
 </body>
 </html>
